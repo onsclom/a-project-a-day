@@ -19,7 +19,6 @@ h2 {
 
 header a {
   border: 1px solid #e81c4f;
-  border-radius: 290486px;
   color: white;
   font-size: 0.6em;
   letter-spacing: 0.2em;
@@ -52,7 +51,8 @@ a {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 15rem;
-  margin: auto;
+  margin: 40px;
+  display:inline-block;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -70,4 +70,20 @@ a {
   display: block;
   margin: auto;
   width: 50%;
+}
+
+.card-image {
+  object-fit: cover;
+  width: 100%;
+  height: 10rem;
+}
+
+canvas {
+  border: 2px solid #333;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
