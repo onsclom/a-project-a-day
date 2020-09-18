@@ -6,8 +6,6 @@ let spawnRate = 2;
 let tick = 0;
 console.log("weeoo");
 
-
-
 window.setup = function () {
   createCanvas(600,400);
 
@@ -18,7 +16,7 @@ window.setup = function () {
 }
 
 window.draw = function () {
-  background(color('#566b78'));
+  background(color('#333333'));
   tick += 1;
 
   if (tick>=spawnRate) {
