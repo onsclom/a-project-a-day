@@ -81,3 +81,7 @@ canvas {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.darken {
+  filter: brightness(75%);
+}
