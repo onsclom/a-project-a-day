@@ -1,5 +1,6 @@
 let theShader;
 var elem = document.getElementById("canvas");
+var def_size = 500;
 
 function preload(){
   // load the shader
@@ -8,7 +9,7 @@ function preload(){
 
 function setup() {
   // shaders require WEBGL mode to work
-  let canvas = createCanvas(500, 500, WEBGL);
+  let canvas = createCanvas(def_size, def_size, WEBGL);
   canvas.id("canvas");
   noStroke();
 
@@ -18,8 +19,9 @@ function setup() {
 
 function draw() {  
   theShader.setUniform("u_resolution", [width, height]);
+  //console.log(width,height);
   theShader.setUniform("u_time", millis() / 1000.0); // we divide millis by 1000 to convert it to seconds
-  theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)]); // we flip Y so it's oriented properly in our shader
+  //theShader.setUniform("u_mouse", [mouseX, map(mouseY, 0, height, height, 0)]); // we flip Y so it's oriented properly in our shader
   // shader() sets the active shader with our shader
   shader(theShader);
 
@@ -35,7 +37,7 @@ function draw() {
   }
   else
   {
-    resizeCanvas(600, 600);
+    resizeCanvas(def_size, def_size);
   }
 }
 

@@ -1,7 +1,8 @@
 #ifdef GL_ES
-precision mediump float;
+precision highp float;
 #endif
 
+varying vec2 vTexCoord;
 uniform vec2 u_resolution; // This is passed in as a uniform from the sketch.js file
 uniform float u_time;
 
@@ -14,20 +15,20 @@ void main() {
   // position of the pixel divided by resolution, to get normalized positions on the canvas
   vec2 st;
   //origin
-  st.x = -x_user_coord + (gl_FragCoord.x/u_resolution.x)*2.0*x_user_coord;
-  st.y = -x_user_coord*(u_resolution.y/u_resolution.x) + (gl_FragCoord.y/u_resolution.y)*2.0*x_user_coord*(u_resolution.y/u_resolution.x);
+  st.x = -x_user_coord + (vTexCoord.x)*2.0*x_user_coord;
+  st.y = -x_user_coord*(u_resolution.y/u_resolution.x) + (vTexCoord.y)*2.0*x_user_coord*(u_resolution.y/u_resolution.x);
 
-  highp float x0 = 0.0;
-  highp float c1 = st.x;
-  highp float y0 = 0.0;
-  highp float c2 = st.y;
+  float x0 = 0.0;
+  float c1 = st.x;
+  float y0 = 0.0;
+  float c2 = st.y;
 
   int count = 0;
 
   for (int i=0; i<iterations; i++)
   {
-    highp float old_x = x0;
-    highp float old_y = y0;
+    float old_x = x0;
+    float old_y = y0;
     x0 = old_x*old_x-old_y*old_y+c1;
     y0 = 2.0*old_x*old_y+c2;
 
