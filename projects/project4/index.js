@@ -22,4 +22,3 @@ Sine.addEventListener('click', function() {
 Triangle.addEventListener('click', function() {
   synth.oscillator.type = "triangle";
 });
-
