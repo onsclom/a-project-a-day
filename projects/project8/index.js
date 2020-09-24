@@ -10,17 +10,18 @@ function submit_pressed() {
     sum += word.length;
   }
   sum /= paragraph.value.trim().split(" ").length
-  
-  let sign = sum-5<0 ? -1 : 1
 
-  iq = 100 + Math.log( Math.abs( (sum-5)*100000000000000000 ) ) * sign
+  iq = 100
+  iq += (sigmoid( (sum-5)*.1 )-.5)*300
   iq = Math.round(iq)
   iqText.innerHTML = `IQ: <b>${iq}</b>`
   iqText.style.display = "block";
-
-  
 }
 
 function hide() {
   iqText.style.display = "none";
+}
+
+function sigmoid(t) {
+  return 1/(1+Math.pow(Math.E, -t));
 }
