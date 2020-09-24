@@ -9,7 +9,7 @@ let rectSize = 200;
 let rectGoal = 200;
 let curRotate = 0;
 
-let count = 123;
+let count = 0;
 let dir = 1;
 
 function setup() {
